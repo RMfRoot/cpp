@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:50 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/20 23:25:14 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/06/25 01:44:54 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed()
 	_nbr = 0;
 }
 
-void	Fixed::operator=(const Fixed &fix)
+Fixed	&Fixed::operator=(const Fixed &fix)
 {
 	std::cout << "Copy assignment operator called\n";
 	_nbr = fix.getRawBits();

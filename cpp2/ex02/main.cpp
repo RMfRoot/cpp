@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/23 23:25:35 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/06/24 22:20:38 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int main()
 {
 	Fixed a;
 	Fixed const b( 10 );
-	Fixed const c( 42.42f );
+	Fixed const c( b );
 	Fixed d( 5 );
-	a = Fixed( 234.5f );
+	a = d;
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;

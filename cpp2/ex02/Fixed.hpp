@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:26 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/23 23:13:59 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/06/25 01:44:05 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
 	Fixed(const Fixed &fix);
 	Fixed(const int nbr);
 	Fixed(const float nbr);
-	void	operator=(const Fixed &fix);
+	Fixed	&operator=(const Fixed &fix);
 	bool	operator==(const Fixed &fix) const;
 	bool	operator!=(const Fixed &fix) const;
 	bool	operator<(const Fixed &fix) const;

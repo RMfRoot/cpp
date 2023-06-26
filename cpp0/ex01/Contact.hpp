@@ -1,16 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 02:06:47 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/20 22:09:38 by egeorgel         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "Phonebook.h"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+# include "PhoneProgram.hpp"
 
 class Contact
 {
@@ -23,3 +13,5 @@ class Contact
 		Contact(/* args */);
 		~Contact();
 };
+
+#endif
