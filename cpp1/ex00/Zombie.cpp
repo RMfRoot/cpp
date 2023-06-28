@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 20:20:33 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/05 22:43:42 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/06/27 02:14:37 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ Zombie::Zombie(/* args */)
 
 Zombie::~Zombie()
 {
-	std::cout << "Zombie " << name << " died.\n";
+	std::cout << "Zombie " << name << " died." << std::endl;
 }
 
 void	Zombie::annonce(void)
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

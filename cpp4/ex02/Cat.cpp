@@ -1,37 +1,37 @@
 #include "Polymorth.h"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
-	std::cout << "Cat Default constructor called\n";
+	std::cout << "Cat Default constructor called" << std::endl;
 	_brain = new Brain();
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat Destructor called\n";
+	std::cout << "Cat Destructor called" << std::endl;
 	delete _brain;
 }
 
-Cat::Cat(const Animal &animal) : Animal("Cat")
+Cat::Cat(const AAnimal &animal) : AAnimal("Cat")
 {
 	(void)animal;
-	std::cout << "Cat copy constructor called\n";
+	std::cout << "Cat copy constructor called" << std::endl;
 	_brain = new Brain();
 }
 
-Cat::Cat(const Cat &cat) : Animal("Cat")
+Cat::Cat(const Cat &cat) : AAnimal("Cat")
 {
-	std::cout << "Cat copy constructor called\n";
+	std::cout << "Cat copy constructor called" << std::endl;
 	_brain = new Brain(*cat._brain);
 }
 
-Cat::Cat(const Dog &dog) : Animal("Cat")
+Cat::Cat(const Dog &dog) : AAnimal("Cat")
 {
-	std::cout << "Cat copy constructor called\n";
+	std::cout << "Cat copy constructor called" << std::endl;
 	_brain = new Brain(*dog.getBrain());
 }
 
-Cat	&Cat::operator=(const Animal &animal)
+Cat	&Cat::operator=(const AAnimal &animal)
 {
 	(void)animal;
 	return (*this);
@@ -68,5 +68,5 @@ Brain	*Cat::getBrain() const
 
 void	Cat::makeSound() const
 {
-	std::cout << "Meow\n";
+	std::cout << "Meow" << std::endl;
 }

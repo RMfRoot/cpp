@@ -2,15 +2,15 @@
 # define ANIMAL_HPP
 # include "Polymorth.h"
 
-class Animal
+class AAnimal
 {
 	protected:
 		std::string _type;
 	public:
-		Animal(std::string type);
-		Animal(const Animal &animal);
-		virtual	~Animal();
-		Animal	&operator=(const Animal &animal);
+		AAnimal(std::string type);
+		AAnimal(const AAnimal &animal);
+		virtual	~AAnimal();
+		AAnimal	&operator=(const AAnimal &animal);
 		std::string		getType() const;
 		virtual void	makeSound() const = 0;
 };

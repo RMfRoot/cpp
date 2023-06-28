@@ -1,28 +1,28 @@
 #include "Polymorth.h"
 
-Animal::Animal(std::string type) : _type(type)
+AAnimal::AAnimal(std::string type) : _type(type)
 {
-	std::cout << "Animal constructor called\n";
+	std::cout << "Animal constructor called" << std::endl;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Animal Destructor called\n";
+	std::cout << "Animal Destructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &animal) : _type("something")
+AAnimal::AAnimal(const AAnimal &animal) : _type("something")
 {
 	(void)animal;
-	std::cout << "Animal copy constructor called\n";
+	std::cout << "Animal copy constructor called" << std::endl;
 }
 
-Animal	&Animal::operator=(const Animal &animal)
+AAnimal	&AAnimal::operator=(const AAnimal &animal)
 {
 	(void)animal;
 	return (*this);
 }
 
-std::string	Animal::getType() const
+std::string	AAnimal::getType() const
 {
 	return (_type);
 }

@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/07 00:02:23 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/06/27 02:14:37 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ std::string	getFile(std::string str)
 		file.close();
 	}
 	catch (std::ifstream::failure e) {
-    	std::cerr << "Open/read/close error\n";
+    	std::cerr << "Open/read/close error" << std::endl;
 		exit(1);
 	}
 	return (in);
@@ -47,7 +47,7 @@ int	main(int argc, char **argv)
 		try{	
 			throw parseException();
 		}catch (parseException err){
-			std::cerr << err.what() << '\n';
+			std::cerr << err.what() << std::endl;
 			exit(1);
 		}
 	}
@@ -60,5 +60,5 @@ int	main(int argc, char **argv)
 		str.erase(pos, find.size());
 		str.insert(pos, replace);
 	}
-	std::cout << str << "\n";
+	std::cout << str << std::endl;
 }

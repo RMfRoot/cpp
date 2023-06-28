@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:50 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/25 01:44:17 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/06/27 02:14:37 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called\n";
+	std::cout << "Default constructor called" << std::endl;
 	_nbr = 0;
 }
 
 Fixed	&Fixed::operator=(const Fixed &fix)
 {
-	std::cout << "Copy assignment operator called\n";
+	std::cout << "Copy assignment operator called" << std::endl;
 	_nbr = fix.getRawBits();
 }
 
@@ -133,23 +133,23 @@ bool	Fixed::operator>=(const Fixed &fix) const
 
 Fixed::Fixed(const Fixed &fix)
 {
-	std::cout << "Copy constructor called\n";
+	std::cout << "Copy constructor called" << std::endl;
 	_nbr = fix.getRawBits();
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called\n";
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const int nbr) : _nbr(nbr << _fractional_bits)
 {
-	std::cout << "Int constructor called\n";
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float nbr) : _nbr(nbr * (1 << _fractional_bits))
 {
-	std::cout << "Float constructor called\n";
+	std::cout << "Float constructor called" << std::endl;
 }
 
 int	Fixed::toInt() const
@@ -169,6 +169,6 @@ int Fixed::getRawBits() const
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits called\n";
+	std::cout << "setRawBits called" << std::endl;
 	_nbr = raw;
 }

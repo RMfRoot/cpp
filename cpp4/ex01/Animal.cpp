@@ -2,23 +2,23 @@
 
 Animal::Animal(std::string type) : _type(type)
 {
-	std::cout << "Animal constructor called\n";
+	std::cout << "Animal constructor called" << std::endl;
 }
 
 Animal::Animal() : _type("something")
 {
-	std::cout << "Animal Default constructor called\n";
+	std::cout << "Animal Default constructor called" << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal Destructor called\n";
+	std::cout << "Animal Destructor called" << std::endl;
 }
 
 Animal::Animal(const Animal &animal) : _type("something")
 {
 	(void)animal;
-	std::cout << "Animal copy constructor called\n";
+	std::cout << "Animal copy constructor called" << std::endl;
 }
 
 Animal	&Animal::operator=(const Animal &animal)
@@ -34,5 +34,5 @@ std::string	Animal::getType() const
 
 void	Animal::makeSound() const
 {
-	std::cout << "You start hearing unintelligible and chimerics sounds echoing at the horizon....\n";
+	std::cout << "You start hearing unintelligible and chimerics sounds echoing at the horizon...." << std::endl;
 }

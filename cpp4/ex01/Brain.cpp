@@ -2,17 +2,17 @@
 
 Brain::Brain()
 {
-	std::cout << "Brain Default constructor called\n";
+	std::cout << "Brain Default constructor called" << std::endl;
 }
 
 Brain::~Brain()
 {
-	std::cout << "Brain Destructor called\n";
+	std::cout << "Brain Destructor called" << std::endl;
 }
 
 Brain::Brain(const Brain &brain)
 {
-	std::cout << "Brain copy constructor called\n";
+	std::cout << "Brain copy constructor called" << std::endl;
 	for (int i = 0; i < 100 && !brain._ideas[i].empty(); i++)
 		_ideas[i] = brain._ideas[i];
 }
@@ -36,7 +36,7 @@ void	Brain::printIdeas()
 {
 	int i;
 	for (i = 0; i < 100 && !_ideas[i].empty(); i++)
-		std::cout << _ideas[i] << "\n";
+		std::cout << _ideas[i] << std::endl;
 	if (i == 0)
-		std::cout << "this brain seems rather empty\n";
+		std::cout << "this brain seems rather empty" << std::endl;
 }

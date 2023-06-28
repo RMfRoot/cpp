@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 01:18:27 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/01 02:07:18 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/06/27 02:13:49 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	main(int argc, char **argv)
 	for (int i = 1; i < argc; i++)
 		for (int j = 0; argv[i][j]; j++)
 			std::cout << (char)toupper(argv[i][j]);
-	std::cout << '\n';
+	std::cout << std::endl;
 }

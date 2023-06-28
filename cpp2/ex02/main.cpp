@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/24 22:20:38 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/06/27 02:13:39 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	compare_vars(const Fixed fix, const Fixed fix2, std::string var, std::string var2)
 {
 	if (fix == fix2)
-		std::cout << var << " is equal to " << var2 << "\n";
+		std::cout << var << " is equal to " << var2 << std::endl;
 	else
-		std::cout << var << " is not equal to " << var2 << "\n";
+		std::cout << var << " is not equal to " << var2 << std::endl;
 	if (fix < fix2)
-		std::cout << var << " is smaller than " << var2 << "\n";
+		std::cout << var << " is smaller than " << var2 << std::endl;
 	else
-		std::cout << var << " is not smaller than " << var2 << "\n";
+		std::cout << var << " is not smaller than " << var2 << std::endl;
 	if (fix > fix2)
-		std::cout << var << " is bigger than " << var2 << "\n";
+		std::cout << var << " is bigger than " << var2 << std::endl;
 	else
-		std::cout << var << " is not bigger than " << var2 << "\n";
+		std::cout << var << " is not bigger than " << var2 << std::endl;
 	
 }
 

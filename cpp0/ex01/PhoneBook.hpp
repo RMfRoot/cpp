@@ -1,6 +1,9 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
-# include "PhoneProgram.hpp"
+# include <exception>
+# include <string>
+# include <iostream>
+# include "Contact.hpp"
 
 class PhoneBook
 {
@@ -8,14 +11,12 @@ class PhoneBook
 		int		contact_nbr;
 		Contact	contacts[8];
 	public:
-		void	AddContact();
-		void	PrintContacts();
+		void	addContact();
+		void	printContacts();
 				PhoneBook();
 				~PhoneBook();
 	private:
-		void	PrintVar(std::string str);
-		void	RemoveTop();
-		void	CreateContact();
+		void	removeTop();
 };
 
 #endif

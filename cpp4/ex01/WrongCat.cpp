@@ -2,23 +2,23 @@
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	std::cout << "WrongCat Default constructor called\n";
+	std::cout << "WrongCat Default constructor called" << std::endl;
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat Destructor called\n";
+	std::cout << "WrongCat Destructor called" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongAnimal &wrongAnimal) : WrongAnimal("WrongCat")
 {
 	(void)wrongAnimal;
-	std::cout << "WrongCat copy constructor called\n";
+	std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "Meow\n";
+	std::cout << "Meow" << std::endl;
 }
 
 WrongCat	&WrongCat::operator=(const WrongAnimal &wrongAnimal)
