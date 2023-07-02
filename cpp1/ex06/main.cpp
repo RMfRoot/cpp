@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.h                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 02:55:30 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/07 00:30:10 by egeorgel         ###   ########.fr       */
+/*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
+/*   Updated: 2023/07/02 02:07:18 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_H
-# define HARL_H
-# include <iostream>
-# include <string>
-# include <exception>
-# include "Harl.hpp"
-#endif
+#include "Harl.hpp"
+
+int	main(int argc, char **argv)
+{
+	Harl Harl;
+
+	if (argc != 2)
+		return (0);
+	Harl.complain(argv[1]);
+}

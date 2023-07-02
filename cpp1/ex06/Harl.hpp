@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:26 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/07/02 02:37:38 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/02 02:22:35 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,3 @@ class Harl
 		Harl();
 		~Harl();
 };
-
-typedef void (Harl::*t_fcn) (void);
