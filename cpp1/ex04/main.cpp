@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/07/02 02:07:37 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:45:53 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,18 @@ std::string	getFile(std::string str)
 
 void	setOutput(std::string str, char *filename)
 {
+	int i;
 	std::ofstream	file;
 	std::string		ofile;
 	ofile.assign(filename);
+	i = ofile.find_last_of(".");
+	if (i != -1)
+		ofile.erase(i , -1);
 	ofile += ".replace";
 	file.exceptions(std::ofstream::failbit);
 	try {
 		file.open(ofile);
-		file << str << std::endl;
+		file << str;
 		file.close();
 	}
 	catch (std::ofstream::failure e) {
@@ -63,11 +67,12 @@ std::string replace_in(char **argv, std::string str)
 	std::string replace;
 	find.assign(argv[2]);
 	replace.assign(argv[3]);
-	size_t pos;
-	while ((pos = str.find(find)) != std::string::npos)
+	size_t pos = 0;
+	while ((pos = str.find(find, pos)) != std::string::npos)
 	{
 		str.erase(pos, find.size());
 		str.insert(pos, replace);
+		pos += replace.size() - find.size();
 	}
 	return(str);
 }
