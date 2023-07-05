@@ -1,4 +1,4 @@
-#include "ClapTrap.h"
+#include "FragTrap.hpp"
 
 FragTrap::FragTrap(const std::string name) : ClapTrap(name)
 {

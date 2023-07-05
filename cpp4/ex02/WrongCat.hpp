@@ -1,4 +1,8 @@
-#include "Polymorth.h"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
+# include <string>
+# include <iostream>
+# include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal
 {
@@ -10,3 +14,5 @@ class WrongCat : public WrongAnimal
 		WrongCat	&operator=(const WrongAnimal &wrongAnimal);
 		void	makeSound() const;
 };
+
+#endif

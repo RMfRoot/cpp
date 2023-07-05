@@ -1,4 +1,4 @@
-#include "Polymorth.h"
+#include "WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {

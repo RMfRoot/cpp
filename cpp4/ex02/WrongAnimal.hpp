@@ -1,4 +1,7 @@
-#include "Polymorth.h"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
+# include <string>
+# include <iostream>
 
 class WrongAnimal
 {
@@ -13,3 +16,5 @@ class WrongAnimal
 		std::string	getType() const;
 		void		makeSound() const;
 };
+
+#endif

@@ -1,6 +1,7 @@
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
-# include "Polymorth.h"
+# include <string>
+# include <iostream>
 
 class Brain
 {

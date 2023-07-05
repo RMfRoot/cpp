@@ -1,7 +1,12 @@
 #ifndef DOG_HPP
 # define DOG_HPP
-# include "Polymorth.h"
+# include <string>
+# include <iostream>
+# include "AAnimal.hpp"
+# include "Brain.hpp"
+# include "Cat.hpp"
 
+class Cat;
 
 class Dog : public AAnimal
 {

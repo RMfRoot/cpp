@@ -1,6 +1,7 @@
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
-# include "Polymorth.h"
+# include <string>
+# include <iostream>
 
 class Animal
 {

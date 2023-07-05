@@ -1,4 +1,4 @@
-#include "Polymorth.h"
+#include "Dog.hpp"
 
 Dog::Dog() : AAnimal("Dog")
 {

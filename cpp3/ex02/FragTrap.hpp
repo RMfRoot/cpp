@@ -1,4 +1,8 @@
-#include "ClapTrap.h"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+# include <string>
+# include <iostream>
+# include "ClapTrap.hpp"
 
 class	FragTrap : public ClapTrap
 {
@@ -14,3 +18,5 @@ class	FragTrap : public ClapTrap
 		void	beRepaired(unsigned int amount);
 		void	highFive();
 };
+
+#endif

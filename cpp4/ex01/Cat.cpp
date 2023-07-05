@@ -1,4 +1,4 @@
-#include "Polymorth.h"
+#include "Cat.hpp"
 
 Cat::Cat() : Animal("Cat")
 {

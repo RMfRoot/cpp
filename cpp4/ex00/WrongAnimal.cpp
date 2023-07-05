@@ -1,4 +1,4 @@
-#include "Polymorth.h"
+#include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
