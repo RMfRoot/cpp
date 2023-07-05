@@ -6,14 +6,14 @@
 #    By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 01:40:36 by egeorgel          #+#    #+#              #
-#    Updated: 2023/06/26 21:20:36 by egeorgel         ###   ########.fr        #
+#    Updated: 2023/07/05 19:23:25 by egeorgel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++
 SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ = ${SRC:.cpp=.o}
-CFLAGS = -std=c++98 -Wall -Werror -Wextra -g #-fsanitize=address
+CFLAGS = -std=c++98 -Wall -Werror -Wextra#-g -fsanitize=address
 NAME = Poly
 
 all: $(NAME)
