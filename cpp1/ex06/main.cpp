@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/07/02 02:07:18 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:37:06 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 int	main(int argc, char **argv)
 {
+	std::string str;
 	Harl Harl;
 
-	if (argc != 2)
+	if (argv[1])
+		str.assign(argv[1]);	
+	Harl.complain(str);
+	if (argc)
 		return (0);
-	Harl.complain(argv[1]);
 }

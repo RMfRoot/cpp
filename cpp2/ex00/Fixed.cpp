@@ -6,11 +6,11 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:50 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/27 02:14:37 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:39:16 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.h"
+#include "Fixed.hpp"
 
 
 Fixed::Fixed()
@@ -22,13 +22,14 @@ Fixed::Fixed()
 Fixed	&Fixed::operator=(const Fixed &fix)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	_nbr = fix.getRawBits();
+	_nbr = fix._nbr;
+	return (*this);
 }
 
 Fixed::Fixed(const Fixed &fix)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_nbr = fix.getRawBits();
+	_nbr = fix._nbr;
 }
 
 Fixed::~Fixed()

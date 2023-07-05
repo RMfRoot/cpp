@@ -6,11 +6,11 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 22:06:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/05 22:34:12 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:14:20 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 int	main(void)
 {

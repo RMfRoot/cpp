@@ -6,11 +6,11 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/27 02:13:39 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:08:54 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.h"
+#include "Fixed.hpp"
 
 void	compare_vars(const Fixed fix, const Fixed fix2, std::string var, std::string var2)
 {

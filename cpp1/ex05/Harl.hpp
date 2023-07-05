@@ -6,10 +6,12 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:26 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/07/02 02:37:38 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:20:18 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HARL_HPP
+# define HARL_HPP
 # include <iostream>
 # include <string>
 # include <exception>
@@ -28,3 +30,5 @@ class Harl
 };
 
 typedef void (Harl::*t_fcn) (void);
+
+#endif

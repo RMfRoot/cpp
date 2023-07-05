@@ -6,11 +6,14 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 00:39:02 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/06 01:28:36 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:19:14 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.h"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+# include <string>
+# include <iostream>
 
 class Weapon
 {
@@ -23,3 +26,5 @@ public:
 	const std::string	&getType();
 	void				setType(std::string newType);
 };
+
+#endif

@@ -6,12 +6,12 @@
 #    By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 01:40:36 by egeorgel          #+#    #+#              #
-#    Updated: 2023/06/05 22:51:57 by egeorgel         ###   ########.fr        #
+#    Updated: 2023/07/05 18:21:52 by egeorgel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
+SRC = main.cpp Zombie.cpp
 OBJ = ${SRC:.cpp=.o}
 CFLAGS = -std=c++98 -Wall -Werror -Wextra#-g -fsanitize=address
 NAME = Zombie

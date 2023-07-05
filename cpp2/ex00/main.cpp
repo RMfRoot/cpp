@@ -6,11 +6,11 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/06/09 20:38:10 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:07:08 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.h"
+#include "Fixed.hpp"
 
 int	main()
 {
