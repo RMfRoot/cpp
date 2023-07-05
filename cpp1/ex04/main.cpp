@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/07/04 17:45:53 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/07/05 21:52:57 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,9 @@ std::string	getFile(std::string str)
 
 void	setOutput(std::string str, char *filename)
 {
-	int i;
 	std::ofstream	file;
 	std::string		ofile;
 	ofile.assign(filename);
-	i = ofile.find_last_of(".");
-	if (i != -1)
-		ofile.erase(i , -1);
 	ofile += ".replace";
 	file.exceptions(std::ofstream::failbit);
 	try {
