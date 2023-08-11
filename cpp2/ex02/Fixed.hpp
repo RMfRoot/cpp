@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:26 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/07/05 18:12:39 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:35:44 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ public:
 	Fixed	&operator++();
 	Fixed	operator--(int i);
 	Fixed	operator++(int i);
+	static Fixed	&min(Fixed &fix1, Fixed &fix2);
+	static const Fixed	&min(const Fixed &fix1, const Fixed &fix2);
+	static Fixed	&max(Fixed &fix1, Fixed &fix2);
+	static const Fixed	&max(const Fixed &fix1, const Fixed &fix2);
 	Fixed();
 	~Fixed();
 	int		getRawBits() const;

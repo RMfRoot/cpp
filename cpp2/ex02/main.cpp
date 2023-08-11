@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 03:04:52 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/07/05 18:08:54 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:39:07 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,7 @@ int main()
 	compare_vars(b, d, "b", "d");
 	d = d * 2;
 	compare_vars(b, d, "b", "d");
+	std::cout << Fixed::max( a, b ) << " is max" << std::endl;
+	std::cout << Fixed::min( a, b ) << " is min" << std::endl;
 	std::cout << "total is " << a + b + c + d << " as a Float" << std::endl;
 }

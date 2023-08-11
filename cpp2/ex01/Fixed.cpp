@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:50 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/07/05 18:39:58 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:38:03 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Fixed::Fixed(const float nbr) : _nbr(nbr * (1 << _fractional_bits))
 
 int	Fixed::toInt() const
 {
-	return (std::roundf(_nbr >> _fractional_bits));
+	return (roundf(_nbr >> _fractional_bits));
 }
 
 float	Fixed::toFloat() const

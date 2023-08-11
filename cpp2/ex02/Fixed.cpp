@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:50 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/07/05 18:40:32 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:45:22 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,44 +92,73 @@ std::ostream	&operator<<(std::ostream &out, const Fixed &fix)
 
 bool	Fixed::operator==(const Fixed &fix) const
 {
-	if (fix.getRawBits() == _nbr)
+	if (_nbr == fix.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool	Fixed::operator!=(const Fixed &fix) const
 {
-	if (fix.getRawBits() != _nbr)
+	if (_nbr != fix.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool	Fixed::operator<(const Fixed &fix) const
 {
-	if (fix.getRawBits() < _nbr)
+	if (_nbr < fix.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool	Fixed::operator>(const Fixed &fix) const
 {
-	if (fix.getRawBits() > _nbr)
+	if (_nbr > fix.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool	Fixed::operator<=(const Fixed &fix) const
 {
-	if (fix.getRawBits() <= _nbr)
+	if (_nbr <= fix.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool	Fixed::operator>=(const Fixed &fix) const
 {
-	if (fix.getRawBits() >= _nbr)
+	if (_nbr >= fix.getRawBits())
 		return (true);
 	return (false);
+}
+
+
+Fixed	&Fixed::min(Fixed &fix1, Fixed &fix2)
+{
+	if (fix1 < fix2)
+		return (fix1);
+	return (fix2);
+}
+
+const Fixed	&Fixed::min(const Fixed &fix1, const Fixed &fix2)
+{
+	if (fix1 < fix2)
+		return (fix1);
+	return (fix2);
+}
+
+Fixed	&Fixed::max(Fixed &fix1, Fixed &fix2)
+{
+	if (fix1 > fix2)
+		return (fix1);
+	return (fix2);
+}
+
+const Fixed	&Fixed::max(const Fixed &fix1, const Fixed &fix2)
+{
+	if (fix1 > fix2)
+		return (fix1);
+	return (fix2);
 }
 
 Fixed::Fixed(const Fixed &fix)
@@ -155,7 +184,7 @@ Fixed::Fixed(const float nbr) : _nbr(nbr * (1 << _fractional_bits))
 
 int	Fixed::toInt() const
 {
-	return (std::roundf(_nbr >> _fractional_bits));
+	return (roundf(_nbr >> _fractional_bits));
 }
 
 float	Fixed::toFloat() const
