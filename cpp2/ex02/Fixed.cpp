@@ -6,7 +6,7 @@
 /*   By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 00:29:50 by egeorgel          #+#    #+#             */
-/*   Updated: 2023/08/11 15:45:22 by egeorgel         ###   ########.fr       */
+/*   Updated: 2023/08/14 15:08:35 by egeorgel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ Fixed	&Fixed::operator=(const Fixed &fix)
 
 Fixed	Fixed::operator*(const Fixed &fix) const
 {
-	Fixed res;
-	res.setRawBits((_nbr * fix.getRawBits()) >> _fractional_bits);
-	return (res);
+	return Fixed(toFloat() * fix.toFloat());
 }
 
 Fixed	Fixed::operator+(const Fixed &fix) const
@@ -49,9 +47,7 @@ Fixed	Fixed::operator-(const Fixed &fix) const
 
 Fixed	Fixed::operator/(const Fixed &fix) const
 {
-	Fixed res;
-	res.setRawBits((_nbr / fix.getRawBits()) << _fractional_bits);
-	return (res);
+	return Fixed(toFloat() / fix.toFloat());
 }
 
 Fixed	&Fixed::operator++()
@@ -177,7 +173,7 @@ Fixed::Fixed(const int nbr) : _nbr(nbr << _fractional_bits)
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float nbr) : _nbr(nbr * (1 << _fractional_bits))
+Fixed::Fixed(const float nbr) : _nbr(roundf(nbr * (1 << _fractional_bits)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
