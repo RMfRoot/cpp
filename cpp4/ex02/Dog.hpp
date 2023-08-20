@@ -18,7 +18,6 @@ class Dog : public AAnimal
 		~Dog();
 		Dog	&operator=(const Dog &dog);
 		virtual void	makeSound() const;
-		Brain		 	*getBrain() const;
 		void			printIdeas();
 		void			newIdea(std::string idea);
 };

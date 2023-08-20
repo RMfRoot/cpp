@@ -17,7 +17,6 @@ class Cat : public AAnimal
 		Cat(const Cat &cat);
 		~Cat();
 		Cat	&operator=(const Cat &cat);
-		Brain			*getBrain() const;
 		void			newIdea(std::string idea);
 		void			printIdeas();
 		virtual void	makeSound() const;

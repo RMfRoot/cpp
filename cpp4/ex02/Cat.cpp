@@ -35,11 +35,6 @@ void	Cat::printIdeas()
 	_brain->printIdeas();
 }
 
-Brain	*Cat::getBrain() const
-{
-	return (_brain);
-}
-
 void	Cat::makeSound() const
 {
 	std::cout << "Meow" << std::endl;

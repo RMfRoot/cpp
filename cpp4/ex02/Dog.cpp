@@ -35,11 +35,6 @@ void	Dog::printIdeas()
 	_brain->printIdeas();
 }
 
-Brain *Dog::getBrain() const
-{
-	return (_brain);
-}
-
 void	Dog::makeSound() const
 {
 	std::cout << "Waf" << std::endl;
