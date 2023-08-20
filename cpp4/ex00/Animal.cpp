@@ -1,6 +1,6 @@
 #include "Animal.hpp"
 
-Animal::Animal(std::string type) : _type(type)
+Animal::Animal(const std::string type) : _type(type)
 {
 	std::cout << "Animal constructor called" << std::endl;
 }

@@ -20,6 +20,8 @@ int main()
 	}
 	copy = *i;
 	copy.printIdeas();
+	//checking for deepcopy
+
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << copy.getType() << " " << std::endl;

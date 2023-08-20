@@ -7,10 +7,9 @@
 
 int main()
 {
-	/*
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
-	const Animal* i = new Cat();*/
+	const Animal* i = new Cat();
 	Dog copy;
 	if(true)
 	{
@@ -20,9 +19,15 @@ int main()
 		copy.printIdeas();
 		copy = c;
 	}
-	//copy = *i;
+	copy = *i;
 	copy.printIdeas();
-	/*std::cout << j->getType() << " " << std::endl;
+	Animal* cp = &copy;
+	std::cout << cp->getType() << " " << std::endl;
+	cp->makeSound();
+
+	//checking for deepcopy
+
+	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << meta->getType() << " " << std::endl;
 	std::cout << copy.getType() << " " << std::endl;
@@ -32,7 +37,7 @@ int main()
 	copy.makeSound();
 	delete meta;
 	delete j;
-	delete i;*/
+	delete i;
 	//system("leaks Poly");
 	return 0;
 }
