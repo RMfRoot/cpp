@@ -10,34 +10,32 @@ int main()
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	Dog copy;
+	Cat copy;
 	if(true)
 	{
 		Cat c;
+		std::cout << std::endl;
 		c.newIdea("ougabouga");
 		c.printIdeas();
 		copy.printIdeas();
 		copy = c;
 	}
-	copy = *i;
 	copy.printIdeas();
-	Animal* cp = &copy;
-	std::cout << cp->getType() << " " << std::endl;
-	cp->makeSound();
-
 	//checking for deepcopy
+	std::cout << copy.getType() << " " << std::endl;
+	copy.makeSound();
 
+	std::cout << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << meta->getType() << " " << std::endl;
-	std::cout << copy.getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
-	copy.makeSound();
+	
+	std::cout << std::endl;
 	delete meta;
 	delete j;
 	delete i;
-	//system("leaks Poly");
 	return 0;
 }

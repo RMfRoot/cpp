@@ -10,20 +10,18 @@ WrongCat::~WrongCat()
 	std::cout << "WrongCat Destructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongAnimal &wrongAnimal) : WrongAnimal("WrongCat")
+WrongCat::WrongCat(const WrongCat &wrongCat) : WrongAnimal(wrongCat._type)
 {
-	(void)wrongAnimal;
 	std::cout << "WrongCat copy constructor called" << std::endl;
+}
+
+WrongCat	&WrongCat::operator=(const WrongCat &wrongCat)
+{
+	_type = wrongCat._type;
+	return (*this);
 }
 
 void	WrongCat::makeSound() const
 {
 	std::cout << "Meow" << std::endl;
-}
-
-WrongCat	&WrongCat::operator=(const WrongAnimal &wrongAnimal)
-{
-	(void)wrongAnimal;
-	_type = "WrongCat";
-	return (*this);
 }

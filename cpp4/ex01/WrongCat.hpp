@@ -9,9 +9,9 @@ class WrongCat : public WrongAnimal
 	public:
 		using WrongAnimal::operator=;
 		WrongCat();
-		WrongCat(const WrongAnimal &wrongAnimal);
+		WrongCat(const WrongCat &wrongCat);
 		~WrongCat();
-		WrongCat	&operator=(const WrongAnimal &wrongAnimal);
+		WrongCat	&operator=(const WrongCat &wrongCat);
 		void	makeSound() const;
 };
 

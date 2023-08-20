@@ -12,42 +12,16 @@ Cat::~Cat()
 	delete _brain;
 }
 
-Cat::Cat(const AAnimal &animal) : AAnimal("Cat")
-{
-	(void)animal;
-	std::cout << "Cat copy constructor called" << std::endl;
-	_brain = new Brain();
-}
-
-Cat::Cat(const Cat &cat) : AAnimal("Cat")
+Cat::Cat(const Cat &cat) : AAnimal(cat._type)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	_brain = new Brain(*cat._brain);
-}
-
-Cat::Cat(const Dog &dog) : AAnimal("Cat")
-{
-	std::cout << "Cat copy constructor called" << std::endl;
-	_brain = new Brain(*dog.getBrain());
-}
-
-Cat	&Cat::operator=(const AAnimal &animal)
-{
-	(void)animal;
-	return (*this);
 }
 
 Cat	&Cat::operator=(const Cat &cat)
 {
-	//delete _brain;
+	_type = cat._type;
 	_brain = new Brain(*cat._brain);
-	return (*this);
-}
-
-Cat	&Cat::operator=(const Dog &dog)
-{
-	//delete _brain;
-	_brain = new Brain(*dog.getBrain());
 	return (*this);
 }
 

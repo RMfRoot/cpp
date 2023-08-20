@@ -12,42 +12,16 @@ Dog::~Dog()
 	delete _brain;
 }
 
-Dog::Dog(const AAnimal &animal) : AAnimal("Dog")
+Dog::Dog(const Dog &dog) : AAnimal(dog._type)
 {
-	(void)animal;
-	std::cout << "Dog copy constructor called" << std::endl;
-	_brain = new Brain();
-}
-
-Dog::Dog(const Dog &dog) : AAnimal("Dog")
-{
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "Dog copy constructor called" << std::endl;	
 	_brain = new Brain(*dog._brain);
-}
-
-Dog::Dog(const Cat &cat) : AAnimal("Dog")
-{
-	std::cout << "Dog copy constructor called" << std::endl;
-	_brain = new Brain(*cat.getBrain());
-}
-
-Dog	&Dog::operator=(const AAnimal &animal)
-{
-	(void)animal;
-	return (*this);
 }
 
 Dog	&Dog::operator=(const Dog &dog)
 {
-	delete _brain;
+	_type = dog._type;
 	_brain = new Brain(*dog._brain);
-	return (*this);
-}
-
-Dog	&Dog::operator=(const Cat &cat)
-{
-	delete _brain;
-	_brain = new Brain(*cat.getBrain());
 	return (*this);
 }
 

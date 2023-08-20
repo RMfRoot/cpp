@@ -15,16 +15,14 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "WrongAnimal Destructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &wrongAnimal) : _type("something")
+WrongAnimal::WrongAnimal(const WrongAnimal &wrongAnimal) : _type(wrongAnimal._type)
 {
-	(void)wrongAnimal;
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
 }
 
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &wrongAnimal)
 {
-	(void)wrongAnimal;
-	_type = "something";
+	_type = wrongAnimal._type;
 	return (*this);
 }
 
