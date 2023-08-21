@@ -8,6 +8,9 @@ class Character : public ICharacter
 	private:
 		std::string	_name;
 		AMateria	*_inventory[4];
+		AMateria	**_created;
+		int			_createSize;
+		void		newCreation(AMateria *m);
 	public:
 		Character(std::string name);
 		Character(const Character &character);

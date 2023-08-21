@@ -45,16 +45,18 @@ void		MateriaSource::learnMateria(AMateria *m)
 			break;
 		}
 		if (i == 3)
+		{
+			delete m;
 			std::cout << "cannot learn any more Materia" << std::endl;
+		}
 	}
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &type)
 {
 	for (int i = 0; i < 4; i++)
-	{
 		if (_inventory[i]->getType() == type)
 			return (_inventory[i]->clone());
-	}
+	std::cout << "invalid Materia type" << std::endl;
 	return (0);
 }

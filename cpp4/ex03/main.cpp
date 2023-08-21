@@ -12,17 +12,34 @@ int main()
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
-	delete bob;
-	delete me;
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Cure());
+	Character me("me");
+	ICharacter* Ime = &me;
+	Ime->equip(src->createMateria("ice"));
+	Ime->equip(src->createMateria("cure"));
+	Ime->equip(src->createMateria("awdawdawdsda"));
+	Ime->equip(src->createMateria("ice"));
+	Ime->equip(src->createMateria("ice"));
+	Ime->equip(src->createMateria("ice"));
+	me.unequip(0);
+	me.equip(src->createMateria("cure"));
+
+	std::cout << std::endl;
+	Character bob = me;
+	ICharacter* Ibob = &bob;
+	Ibob->unequip(0);
+	Ibob->unequip(-1);
+	Ibob->unequip(0);
+	
+	std::cout << std::endl;
+	bob = me;
+	Ime->use(0, *Ibob);
+	Ime->use(-1, me);
+	Ime->use(2, me);
+	Ibob->unequip(0);
+	Ibob->use(0, bob);
 	delete src;
 	return 0;
 }
