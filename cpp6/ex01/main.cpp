@@ -11,4 +11,11 @@ int main(void)
 
 	std::cout << data.blabla << std::endl;
 	std::cout << res->blabla << std::endl;
+
+	ptr = Serializer::serialize(NULL);
+	res = Serializer::deserialize(ptr);
+
+	std::cout << data.blabla << std::endl;
+	std::cout << res << std::endl;
+	//res->blabla will segfault because res and ptr are NULL
 }
