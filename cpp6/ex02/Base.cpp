@@ -42,18 +42,18 @@ void	Base::identify(Base &p)
 		std::cout << "Object is of type A" << std::endl;
 		return;
 	}
-	catch(std::bad_cast &e) {}
+	catch(std::exception &e) {}
 	try{
 		dynamic_cast<B&>(p);
 		std::cout << "Object is of type B" << std::endl;
 		return;
 	}
-	catch(std::bad_cast &e) {}
+	catch(std::exception &e) {}
 	try{
 		dynamic_cast<C&>(p);
 		std::cout << "Object is of type C" << std::endl;
 		return;
 	}
-	catch(std::bad_cast &e) {}
+	catch(std::exception &e) {}
 	std::cout << "Object is of type Base" << std::endl;
 }
