@@ -6,15 +6,15 @@
 #    By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 01:40:36 by egeorgel          #+#    #+#              #
-#    Updated: 2023/09/03 23:23:12 by egeorgel         ###   ########.fr        #
+#    Updated: 2023/09/04 12:04:48 by egeorgel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-SRC = main.cpp Serializer.cpp
+SRC = main.cpp Base.cpp
 OBJ = ${SRC:.cpp=.o}
 CFLAGS = -std=c++98 -Wall -Werror -Wextra -g #-fsanitize=address
-NAME = Serializer
+NAME = Base
 
 all: $(NAME)
 
