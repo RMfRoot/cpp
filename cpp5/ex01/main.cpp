@@ -4,7 +4,7 @@
 int	main()
 {
 	try{
-		AForm("e", 151, 5);
+		Form("e", 151, 5);
 		std::cout << "This wont be printed as an exception occured" << std::endl;
 	}
 	catch(std::exception &e){
@@ -12,7 +12,7 @@ int	main()
 	}
 
 	try{
-		AForm("e", 5, -123);
+		Form("e", 5, -123);
 		std::cout << "This wont be printed as an exception occured" << std::endl;
 	}
 	catch(std::exception &e){
@@ -20,7 +20,7 @@ int	main()
 	}
 	
 	try{
-		AForm f("message", 5, 1);
+		Form f("message", 5, 1);
 		Bureaucrat b("soldier", 50);
 		std::cout << f << std::endl << b << std::endl;
 		b.signForm(f);
@@ -30,7 +30,7 @@ int	main()
 	}
 	
 	try{
-		AForm f("message", 5, 1);
+		Form f("message", 5, 1);
 		Bureaucrat b("general", 1);
 		std::cout << f << std::endl << b << std::endl;
 		b.signForm(f);

@@ -3,44 +3,44 @@
 void	checkGrade(const int &grade)
 {
 	if (grade < 1)
-		throw AForm::GradeTooHighExecption();
+		throw Form::GradeTooHighExecption();
 	else if (grade > 150)
-		throw AForm::GradeTooLowExecption();
+		throw Form::GradeTooLowExecption();
 }
 
-const char	*AForm::GradeTooHighExecption::what() const throw() {return ("Grade too high");}
+const char	*Form::GradeTooHighExecption::what() const throw() {return ("Grade too high");}
 
-const char	*AForm::GradeTooLowExecption::what() const throw() {return ("Grade too low");}
+const char	*Form::GradeTooLowExecption::what() const throw() {return ("Grade too low");}
 
-AForm::AForm(std::string name, int signGrade, int executeGrade) : _name(name), _signGrade(signGrade), _executeGrade(executeGrade)
+Form::Form(std::string name, int signGrade, int executeGrade) : _name(name), _signGrade(signGrade), _executeGrade(executeGrade)
 {
 	_signed = false;
 	checkGrade(_signGrade);
 	checkGrade(_executeGrade);
 }
 
-AForm::AForm(const AForm &f) : _name(f._name), _signGrade(f._signGrade), _executeGrade(f._executeGrade)
+Form::Form(const Form &f) : _name(f._name), _signGrade(f._signGrade), _executeGrade(f._executeGrade)
 {
 	_signed = f._signed;
 }
 
-AForm	&AForm::operator=(const AForm &f)
+Form	&Form::operator=(const Form &f)
 {
 	_signed = f._signed;
 	return *this;
 }
 
-AForm::~AForm() {}
+Form::~Form() {}
 
-std::string	AForm::getName() const {return (_name);}
+std::string	Form::getName() const {return (_name);}
 
-bool	AForm::isSigned() const {return (_signed);}
+bool	Form::isSigned() const {return (_signed);}
 
-int	AForm::getSignGrade() const {return (_signGrade);}
+int	Form::getSignGrade() const {return (_signGrade);}
 
-int	AForm::getExecuteGrade() const {return (_executeGrade);}
+int	Form::getExecuteGrade() const {return (_executeGrade);}
 
-void	AForm::beSigned(const Bureaucrat &b)
+void	Form::beSigned(const Bureaucrat &b)
 {
 	if (_signGrade >= b.getGrade())
 		_signed = true;
@@ -48,7 +48,7 @@ void	AForm::beSigned(const Bureaucrat &b)
 		throw GradeTooLowExecption();
 }
 
-std::ostream	&operator<<(std::ostream &out, const AForm &f)
+std::ostream	&operator<<(std::ostream &out, const Form &f)
 {
 	if (f.isSigned())
 		out << "signed form named: " << f.getName() << ", sign grade: " << f.getSignGrade() <<", execute grade: " << f.getExecuteGrade() << ".";

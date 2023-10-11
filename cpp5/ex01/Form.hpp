@@ -5,7 +5,7 @@
 
 class Bureaucrat;
 
-class AForm
+class Form
 {
 	private:
 		const std::string	_name;
@@ -15,10 +15,10 @@ class AForm
 	public:
 		class GradeTooHighExecption : public std::exception {const char	*what() const throw();};
 		class GradeTooLowExecption : public std::exception {const char	*what() const throw();};
-		AForm(std::string name, int signGrade, int executeGrade);
-		AForm(const AForm &f);
-		AForm	&operator=(const AForm &f);
-		~AForm();
+		Form(std::string name, int signGrade, int executeGrade);
+		Form(const Form &f);
+		Form	&operator=(const Form &f);
+		~Form();
 		void		beSigned(const Bureaucrat &b);
 		std::string	getName() const;
 		bool		isSigned() const;
@@ -26,6 +26,6 @@ class AForm
 		int	getExecuteGrade() const;
 };
 
-std::ostream	&operator<<(std::ostream &out, const AForm &b);
+std::ostream	&operator<<(std::ostream &out, const Form &b);
 
 #endif

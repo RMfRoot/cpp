@@ -6,7 +6,7 @@
 #    By: egeorgel <egeorgel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 01:40:36 by egeorgel          #+#    #+#              #
-#    Updated: 2023/09/18 16:11:57 by egeorgel         ###   ########.fr        #
+#    Updated: 2023/09/19 15:20:24 by egeorgel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,6 @@ fclean: clean
 re: fclean all
 
 %.o: %.cpp
-	$(CC) -Wall -Werror -Wextra -g -o $@ -c $<
+	$(CC) $(CFLAGS) -Wall -Werror -Wextra -g -o $@ -c $<
 
 .PHONY: all clean fclean re

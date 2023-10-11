@@ -3,9 +3,9 @@
 # include <string>
 # include <map>
 # include <ctime>
+# include <cstdlib>
 # include <fstream>
 # include <sstream>
-# include <regex>
 # include <iostream>
 
 class BitcoinExchange
@@ -19,6 +19,7 @@ class BitcoinExchange
 				std::string _exceptionValue;
 			public:
 				InvalidFormat(std::string str);
+				virtual	~InvalidFormat() throw() {};
 				const char *what() const throw();
 		};
 		class InvalidDate : public std::exception {const char *what() const throw();};

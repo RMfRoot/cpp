@@ -84,17 +84,49 @@ float	getNearestValue(std::map<tm, float> &currValue, const tm &time)
 	return buff.second;
 }
 
+void	isDigitRange(const std::string line, size_t start, size_t len)
+{
+	for (size_t i = 0; start < line.size() && i < len; start++, i++)
+		if (!isdigit(line[start]))
+			throw BitcoinExchange::InvalidFormat(line);
+}
+
+void	checkInput(const std::string line)
+{
+	isDigitRange(line, 0, 4);
+	if (line[4] != '-')
+		throw BitcoinExchange::InvalidFormat(line);
+	isDigitRange(line, 5, 2);
+	if (line[7] != '-')
+		throw BitcoinExchange::InvalidFormat(line);
+	isDigitRange(line, 8, 2);
+	if (line[10] != ' ' || line[11] != '|' || line[12] != ' ')
+		throw BitcoinExchange::InvalidFormat(line);
+	if (line.size() == 13)
+		throw BitcoinExchange::InvalidFormat(line);
+	if (line[13] == '-')
+		throw BitcoinExchange::NegativeNbr();
+	bool isDot = false;
+	for (size_t i = 13; i < line.size(); i++)
+	{
+		if (isDot == false && line[i] == '.')
+		{
+			isDot = true;
+			continue;
+		}
+		else if (!isdigit(line[i]))
+			throw BitcoinExchange::InvalidFormat(line);
+	}
+}
+
 void	checkFormat(const std::string fileContents, std::map<tm, float> &currValue)
 {
 	std::stringstream ss(fileContents);
 	for (std::string line = ""; std::getline(ss, line, '\n');)
 	{
 		try{
-			if (!std::regex_match(line, std::regex("\\d{4}\\-\\d{2}\\-\\d{2} \\| \\-?\\d+\\.?\\d*")))
-				throw BitcoinExchange::InvalidFormat(line);
+			checkInput(line);
 			float i = (float)std::strtod(line.substr(13, line.size()).c_str(), NULL);
-			if (i < 0)
-				throw BitcoinExchange::NegativeNbr();
 			if (i > 1000)
 				throw BitcoinExchange::BigNbr();
 			tm	time = getTime(line.substr(0, 10));
@@ -106,18 +138,42 @@ void	checkFormat(const std::string fileContents, std::map<tm, float> &currValue)
 	}
 }
 
+void	checkDB(const std::string line)
+{
+	isDigitRange(line, 0, 4);
+	if (line[4] != '-')
+		throw BitcoinExchange::InvalidFormat(line);
+	isDigitRange(line, 5, 2);
+	if (line[7] != '-')
+		throw BitcoinExchange::InvalidFormat(line);
+	isDigitRange(line, 8, 2);
+	if (line[10] != ',')
+		throw BitcoinExchange::InvalidFormat(line);
+	if (line.size() == 11)
+		throw BitcoinExchange::InvalidFormat(line);
+	bool	isDot = false;
+	for (size_t i = 11; i < line.size(); i++)
+	{
+		if (isDot == false && line[i] == '.')
+		{
+			isDot = true;
+			continue;
+		}
+		else if (!isdigit(line[i]))
+			throw BitcoinExchange::InvalidFormat(line);
+	}
+}
+
 void	getDBValues(const std::string dBContents, std::map<tm, float> &currValue)
 {
 	std::stringstream ss(dBContents);
 	for (std::string line = ""; std::getline(ss, line, '\n');)
 	{
 		try{
-			if (std::regex_match(line, std::regex("\\d{4}\\-\\d{2}\\-\\d{2}\\,\\d+\\.?\\d*")))
-			{
-				currValue[getTime(line.substr(0, 10))] = (float)std::strtod(line.substr(11, line.size()).c_str(), NULL);
-			}
+			checkDB(line);
+			currValue[getTime(line.substr(0, 10))] = (float)std::strtod(line.substr(11, line.size()).c_str(), NULL);
 		}
-		catch(std::exception &e) {}
+		catch(...) {}
 	}
 }
 

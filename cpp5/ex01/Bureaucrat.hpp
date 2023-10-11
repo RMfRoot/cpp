@@ -5,7 +5,7 @@
 # include <iostream>
 # include "Form.hpp"
 
-class AForm;
+class Form;
 
 class Bureaucrat
 {
@@ -23,7 +23,7 @@ class Bureaucrat
 		int			getGrade() const;
 		void		gradeUp();
 		void		gradeDown();
-		void		signForm(AForm &F);
+		void		signForm(Form &F);
 };
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &B);
