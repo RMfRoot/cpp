@@ -40,7 +40,11 @@ void	parse(int argc, char **argv, std::list<int>	&input)
 			input.push_back(static_cast<int>(value));
 		}
 	}
-	input.unique();
+	std::list<int> doubl = input;
+	doubl.sort();
+	doubl.unique();
+	if (input.size() != doubl.size())
+		throw PmergeMe::InvalidArgument();
 }
 
 void	printList(const std::list<int> &list)
