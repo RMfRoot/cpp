@@ -34,6 +34,15 @@ std::string	getFileContents(const std::string fileName)
 	fileStream << file.rdbuf();
 	file.close();
 	std::string			fileContents = fileStream.str();
+	int i = 0;
+	std::string::iterator iterator = fileContents.begin();
+	std::string	firstLine = "date | value";
+	for (; *iterator == firstLine[i] && firstLine[i] && iterator != fileContents.end(); iterator++)
+		i++;
+	while (isspace(*iterator) && *iterator != '\n' && iterator != fileContents.end())
+		iterator++;
+	if (!firstLine[i] && *iterator == '\n')
+		fileContents.erase(fileContents.begin(), ++iterator);
 	return fileContents;
 }
 

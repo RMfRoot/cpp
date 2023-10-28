@@ -2,6 +2,8 @@
 # define SPAN_HPP
 # include <vector>
 # include <algorithm>
+# include <numeric>
+# include <climits>
 
 class Span
 {

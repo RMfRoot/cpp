@@ -19,8 +19,8 @@ Array<T>::Array(unsigned int n)
 template <typename T>
 Array<T>::Array(const Array &a)
 {
-	siz = a.size;
-	arr = new T[size];
+	siz = a.siz;
+	arr = new T[siz];
 	for (unsigned int i = 0; i < siz; i++)
 		arr[i] = a[i];
 }
@@ -37,7 +37,15 @@ Array<T>	&Array<T>::operator=(const Array &a)
 }
 
 template <typename T>
-T	&Array<T>::operator[](std::size_t i) const
+T	&Array<T>::operator[](std::size_t i)
+{
+	if (i >= siz)
+		throw std::exception();
+	return arr[i];
+}
+
+template <typename T>
+const T	&Array<T>::operator[](std::size_t i) const
 {
 	if (i >= siz)
 		throw std::exception();
@@ -51,7 +59,7 @@ Array<T>::~Array()
 }
 
 template <typename T>
-std::size_t	Array<T>::size()
+std::size_t	Array<T>::size() const
 {
 	return siz;
 }

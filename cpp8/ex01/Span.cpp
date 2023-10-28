@@ -41,14 +41,15 @@ void	Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterato
 
 int	Span::shortestSpan()
 {
-	std::vector<int> tmp(2);
 	if (_values.size() < 2)
 		throw notEnouthElements();
-	std::partial_sort_copy(_values.begin(), _values.end(), tmp.begin(), tmp.end());
-	return std::abs(tmp[1] - tmp[0]);
+	int	diff = INT_MAX;
+	for (size_t i = 0; i < _values.size(); i++)
+		for (size_t j = 0; j < _values.size(); j++)
+			if (i != j)
+				diff = std::min(diff, abs(_values[i] - _values[j]));
+	return diff;
 }
-
-#include <iostream>
 
 int	Span::longestSpan()
 {

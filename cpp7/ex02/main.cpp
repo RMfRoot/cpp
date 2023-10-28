@@ -3,7 +3,16 @@
 
 int	main()
 {
-	Array< Array<int> > nul;
+	Array< Array<int> > nul(1);
+	try{
+		nul[0] = Array<int>(1);
+		nul[0][0] = 213123;
+		std::cout << nul[0][0] << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << "out of range" << std::endl;
+	}
+
 	Array<int>	nbrs(5);
 	std::cout << nbrs[2] << std::endl;
 
@@ -32,4 +41,8 @@ int	main()
 	catch (std::exception &e) {
 		std::cout << "out of range" << std::endl;
 	}
+
+	const Array<int> consttest(2);
+	//consttest[0] = 3123;
+	std::cout << consttest[0] << std::endl;
 }

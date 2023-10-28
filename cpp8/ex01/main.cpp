@@ -20,8 +20,11 @@ int	main()
 	if (true)
 	{
 		Span	d(20000);
-		for (int i = 0; i < 20000; i++)
-			d.addNumber(i*2);
+		d.addNumber(3);
+		d.addNumber(6);
+		d.addNumber(15);
+		d.addNumber(20);
+		d.addNumber(22);
 		std::cout << d.longestSpan() << std::endl;
 		std::cout << d.shortestSpan() << std::endl;
 		cp = d;

@@ -33,6 +33,10 @@ void	parse(int argc, char **argv, std::list<int>	&input)
 			}
 			else if (value < 0)
 				throw PmergeMe::NegativeNbr();
+			else if (!isdigit(*end) && !isspace(*end) && *end)
+				throw PmergeMe::InvalidArgument();
+			if (isspace(*end))
+				end++;
 			input.push_back(static_cast<int>(value));
 		}
 	}
